@@ -1,0 +1,51 @@
+{
+  "name": "blog-mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "test:unit": "jest --config=jest.config.js",
+    "prebuild": "npm run lint",
+    "lint": "eslint --cache src/**/*.ts",
+    "lint:fix": "eslint --cache src/**/*.ts --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "class-validator": "^0.14.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.1",
+    "express-http-context": "^1.2.4",
+    "express-validator": "^6.14.1",
+    "jsonwebtoken": "^8.5.1",
+    "log4js": "^6.9.1",
+    "mongoose": "^6.3.5",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.16",
+    "reflect-metadata": "^0.2.2",
+    "routing-controllers": "^0.10.4",
+    "swagger-ui-express": "^5.0.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/jest": "^29.5.13",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/multer": "^1.4.12",
+    "@types/supertest": "^6.0.2",
+    "@types/swagger-ui-express": "^4.1.6",
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.6.0"
+  }
+}

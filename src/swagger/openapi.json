@@ -1,0 +1,163 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "test API",
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:5000"
+        }
+    ],
+    "tags": [
+        {
+            "name": "API functions",
+            "description": "API functions of our application"
+        }
+    ],
+    "paths": {
+        "/auth/register": {
+            "post": {
+                "summary": "create new user",
+                "tags": [
+                    "API functions"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            },
+                            "example": {
+                                "email": "testmail@gmail.com",
+                                "password": "watafuck"
+                            }
+                        }
+                    }
+                },
+                "description": "just description for route",
+                "responses": {
+                    "204": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "summary": "authorization",
+                "tags": [
+                    "API functions"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            },
+                            "example": {
+                                "email": "testmail@gmail.com",
+                                "password": "watafuck"
+                            }
+                        }
+                    }
+                },
+                "description": "just description for route",
+                "responses": {
+                    "204": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/posts/{id}": {
+            "get": {
+                "summary": "return post",
+                "tags": [
+                    "API functions"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "get id"
+                    }
+                ],
+                "description": "get post by id",
+                "responses": {
+                    "200": {
+                        "description": "return post"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "update post",
+                "tags": [
+                    "API functions"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Post"
+                            },
+                            "example": {
+                                "title": "fgdfgfd",
+                                "text": "watafuck",
+                                "userId": "66e9ea519b3c0450d503c8da",
+                                "imageUrl": "fdsfsdfs"
+                            }
+                        }
+                    }
+                },
+                "description": "just description for route",
+                "responses": {
+                    "204": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "description": "user's email"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "user's password"
+                    }
+                }
+            },
+            "Post": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "user's email"
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "user's password"
+                    },
+                    "userId": {
+                        "type": "string",
+                        "description": "user's password"
+                    },
+                    "imageUrl": {
+                        "type": "string",
+                        "description": "user's password"
+                    }
+                }
+            }
+        }
+    }
+}
